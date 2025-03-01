@@ -1,0 +1,361 @@
+/* frontend/src/styles/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #4264FB;
+  --secondary-color: #FF6B6B;
+  --success-color: #4CAF50;
+  --warning-color: #FFC107;
+  --info-color: #17A2B8;
+  --background-color: #F5F7FA;
+  --text-color: #333333;
+  --light-text-color: #666666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+/* Button Styles */
+.btn {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 300ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+}
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-secondary {
+  background-color: #ef4444;
+}
+.btn-secondary:hover {
+  background-color: #dc2626;
+}
+
+.btn-success {
+  background-color: #16a34a;
+}
+.btn-success:hover {
+  background-color: #15803d;
+}
+
+.btn-disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition-property: box-shadow;
+  transition-duration: 300ms;
+}
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #2563eb;
+  color: white;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-footer {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #f9fafb;
+  border-top-width: 1px;
+  border-color: #e5e7eb;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  color: #4b5563;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  appearance: none;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  color: #4b5563;
+  line-height: 1.25;
+}
+.form-input:focus {
+  outline: none;
+  ring-width: 2px;
+  ring-color: #3b82f6;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+.bounce {
+  animation: bounce 0.5s ease infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Game specific styles */
+.clue-container {
+  background-color: #eff6ff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  border-left-width: 4px;
+  border-color: #3b82f6;
+}
+
+.option-button {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  transition-property: all;
+  transition-duration: 300ms;
+  border-width: 2px;
+}
+
+.option-button:hover {
+  background-color: #eff6ff;
+  border-color: #60a5fa;
+}
+
+.option-button.selected {
+  border-color: #2563eb;
+  background-color: #dbeafe;
+}
+
+.option-button.correct {
+  border-color: #16a34a;
+  background-color: #dcfce7;
+}
+
+.option-button.incorrect {
+  border-color: #dc2626;
+  background-color: #fee2e2;
+}
+
+.feedback-container {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-width: 2px;
+}
+
+.feedback-container.correct {
+  background-color: #f0fdf4;
+  border-color: #22c55e;
+}
+
+.feedback-container.incorrect {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+}
+
+.fact-box {
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #fefce8;
+  border-radius: 0.5rem;
+  border-left-width: 4px;
+  border-color: #facc15;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.score-item {
+  text-align: center;
+}
+
+.score-item-label {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.score-item-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.score-item-value.correct {
+  color: #16a34a;
+}
+
+.score-item-value.incorrect {
+  color: #dc2626;
+}
+
+/* Challenge related styles */
+.challenge-card {
+  background-image: linear-gradient(to right, #2563eb, #9333ea);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.challenge-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.share-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.share-content {
+  background-color: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 28rem;
+  width: 100%;
+}
+
+.share-image {
+  width: 100%;
+  height: 12rem;
+  background-color: #dbeafe;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.share-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.emoji-animation {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.emoji-correct {
+  animation: bounce 1s ease infinite;
+}
+
+.emoji-incorrect {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(0); }
+  75% { transform: translateX(10px); }
+}
