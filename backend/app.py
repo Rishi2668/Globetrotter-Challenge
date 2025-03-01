@@ -17,9 +17,15 @@ app = Flask(__name__)
 CORS(app,origins="https://fantastic-lollipop-bbbcf3.netlify.app/")
 
 # Configure MongoDB
-app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'mongodb://localhost:27017/globetrotter')
-mongo_client = MongoClient(app.config['MONGO_URI'])
-db = mongo_client.get_database()
+# app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'mongodb://localhost:27017/')
+# db_name = os.getenv('MONGO_DB_NAME', 'globetrotter')
+mongo_uri = os.getenv('MONGO_URI', 'mongodb://localhost:27017')
+db_name = os.getenv('MONGO_DB_NAME', 'globetrotter')
+app.config['MONGO_URI'] = mongo_uri
+mongo_client = MongoClient(mongo_uri)
+db = mongo_client[db_name]
+# mongo_client = MongoClient(app.config['MONGO_URI'])
+# db = mongo_client.get_database()
 
 # Register blueprints
 app.register_blueprint(destination_bp, url_prefix='/api/destinations')
