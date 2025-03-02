@@ -77,7 +77,12 @@ The Ultimate Travel Guessing Game - Test your geography knowledge by guessing de
    ```bash
    npm install
    ```
-4. Start the frontend development server:
+4. Create a .env file in the frontend directory with the following content:
+   ```bash
+   VITE_API_URL=http://127.0.0.1:5000
+   ```
+
+5. Start the frontend development server:
    ```bash
    npm run dev
    ```
