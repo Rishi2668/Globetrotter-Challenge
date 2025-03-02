@@ -14,7 +14,7 @@ load_dotenv()
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app,origins="https://fantastic-lollipop-bbbcf3.netlify.app/")
+CORS(app, resources={r"/api/*": {"origins": ["https://fantastic-lollipop-bbbcf3.netlify.app", "http://localhost:3000"]}})
 
 # Configure MongoDB
 # app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'mongodb://localhost:27017/')
