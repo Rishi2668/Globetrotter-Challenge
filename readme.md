@@ -46,11 +46,12 @@ The Ultimate Travel Guessing Game - Test your geography knowledge by guessing de
    ```
 3. Create a `.env` file in the backend directory and add the following:
    ```ini
-   MONGO_URI=mongodb://localhost:27017/globetrotter
+   MONGO_URI=mongodb://localhost:27017/
    DEBUG=True
    PORT=5000
    HOST=0.0.0.0
    FRONTEND_URL=http://localhost:3000
+   MONGO_DB_NAME=globetrotter
    ```
 4. Install dependencies:
    ```bash
